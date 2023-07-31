@@ -27,8 +27,16 @@ const Cart = () => {
           <Card.Text>INR: {product.price}</Card.Text>
         </Card.Body>
         <Card.Footer style={{ background: "white" }}>
-          <Button variant="danger" onClick={() => removeToCart(product.id)}>
-            Delete Item
+          <Button
+            variant="danger"
+            onClick={() => removeToCart(product.id)}
+            style={{ padding: "5px", fontFamily: "bold", color: "#111111" }}
+          >
+            <Card.Img
+              src="/src/assets/delete.svg"
+              style={{ width: "36px", height: "24px" }}
+            />
+            Eliminar Producto
           </Button>
         </Card.Footer>
       </Card>

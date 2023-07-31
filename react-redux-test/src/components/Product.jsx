@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { useDispatch, useSelector } from 'react-redux';
-import { add } from '../components/store/cartSlice'
-import { getProducts } from '../components/store/productSlice/'
+import { useDispatch, useSelector } from "react-redux";
+import { add } from "../components/store/cartSlice";
+import { getProducts } from "../components/store/productSlice/";
 
 const Product = () => {
   const dispatch = useDispatch();
-  const {data: products } = useSelector(state => state.products);
+  const { data: products } = useSelector((state) => state.products);
 
   // const [products, getProduct] = useState([]);
   useEffect(() => {
@@ -18,10 +18,10 @@ const Product = () => {
     //   .then((result) => getProduct(result));
   }, []);
 
-  const addToCart =(product) =>{
-      //dispatch an add action
-      dispatch(add(product))
-  }
+  const addToCart = (product) => {
+    //dispatch an add action
+    dispatch(add(product));
+  };
 
   const Cards = products.map((product) => (
     <div className="col-md-3" style={{ marginBottom: "10px" }}>
@@ -37,8 +37,18 @@ const Product = () => {
           <Card.Title>{product.title}</Card.Title>
           <Card.Text>INR: {product.price}</Card.Text>
         </Card.Body>
-        <Card.Footer style={{background: 'white'}} >
-          <Button variant="primary" onClick={()=>addToCart(product)} >Add to Cart</Button>
+        <Card.Footer style={{ background: "white" }}>
+          <Button
+            variant="primary"
+            onClick={() => addToCart(product)}
+            style={{ padding: "5px", color: "#111111", fontFamily: "bold" }}
+          >
+            <Card.Img
+              src="/src/assets/img/add.png"
+              style={{ width: "20px", height: "20px" }}
+            />
+            Añadir al Carrito
+          </Button>
         </Card.Footer>
       </Card>
     </div>
