@@ -19,7 +19,7 @@ const NavbarPanel = () => {
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             <Nav.Link to="cart" as={Link}>
-              Carrito
+              Carrito  
               {cartProducts.length}
             </Nav.Link>
           </Navbar.Text>
